@@ -6,3 +6,14 @@ logging:
     org.springframework.transaction.interceptor: TRACE
 
 
+springdoc:
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+  swagger-ui:
+    operations-sorter: alpha
+    tags-sorter: alpha
+    path: /api-docs
+    disable-swagger-default-url: true
+    doc-expansion: none
+  paths-to-match:
+    - /**
