@@ -19,6 +19,12 @@ public class BoardRepository {
         return board.getId();
     }
 
+    public Long update(Long id, Board board) {
+        board.addId(id);
+        boards.put(id, board);
+        return board.getId();
+    }
+
     public Board findOne(Long id) {
         return boards.get(id);
     }

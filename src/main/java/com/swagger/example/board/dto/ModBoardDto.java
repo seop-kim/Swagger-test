@@ -1,21 +1,22 @@
 package com.swagger.example.board.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.swagger.example.board.dto.AddBoardDto.Response;
 import com.swagger.example.board.model.Board;
 import lombok.Builder;
 
-public record AddBoardDto() {
+public record ModBoardDto() {
     public record Request(
-            String title,
-            String content) {}
+            String modTitle,
+            String modContent
+    ) {}
 
     @Builder
     public record Response(Long id) {}
 
-    public static Board toEntity(AddBoardDto.Request request) {
+    public static Board toEntity(ModBoardDto.Request request) {
         return Board.builder()
-                .title(request.title)
-                .content(request.content)
+                .title(request.modTitle)
+                .content(request.modContent)
                 .build();
     }
 

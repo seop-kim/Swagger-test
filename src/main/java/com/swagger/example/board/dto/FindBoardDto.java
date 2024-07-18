@@ -11,7 +11,7 @@ public record FindBoardDto() {
             String content
     ) {}
 
-    public static FindBoardDto.Response of(Board board) {
+    public static Response of(Board board) {
         return Response.builder()
                 .id(board.getId())
                 .title(board.getTitle())
