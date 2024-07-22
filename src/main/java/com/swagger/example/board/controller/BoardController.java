@@ -2,7 +2,6 @@ package com.swagger.example.board.controller;
 
 import com.swagger.example.board.dto.AddBoardDto;
 import com.swagger.example.board.dto.FindBoardDto;
-import com.swagger.example.board.dto.FindBoardDto.Response;
 import com.swagger.example.board.dto.ModBoardDto;
 import com.swagger.example.board.service.BoardService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -26,12 +25,11 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "Board-API", description = "게시판 API")
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/board")
+@RequestMapping("/boards")
 public class BoardController {
     private final BoardService service;
 
-    @Operation(summary = "ID 게시글 조회", responses = {
-            @ApiResponse(responseCode = "200", description = "OK", content = @Content(schema = @Schema(implementation = FindBoardDto.Response.class)))})
+    @Operation(summary = "ID 게시글 조회")
     @GetMapping("/{id}")
     public ResponseEntity<FindBoardDto.Response> findBoard(@PathVariable Long id) {
         FindBoardDto.Response response = service.findOne(id);

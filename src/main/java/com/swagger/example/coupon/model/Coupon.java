@@ -1,4 +1,4 @@
-package com.swagger.example.board.model;
+package com.swagger.example.coupon.model;
 
 import com.swagger.example.member.model.Member;
 import lombok.Builder;
@@ -6,11 +6,10 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class Board {
+public class Coupon {
     private Long id;
     private Member member;
-    private String title;
-    private String content;
+    private String name;
 
     public void addId(Long id) {
         this.id = id;
@@ -18,6 +17,6 @@ public class Board {
 
     public void addMember(Member member) {
         this.member = member;
-        member.getBoards().add(this);
+        member.getCoupons().add(this);
     }
 }
