@@ -5,8 +5,8 @@ logging:
     org.hibernate.orm.jdbc.extract: TRACE
     org.springframework.transaction.interceptor: TRACE
 
-
 springdoc:
+  use-fqn: true
   default-consumes-media-type: application/json
   default-produces-media-type: application/json
   swagger-ui:
